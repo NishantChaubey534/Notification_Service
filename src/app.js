@@ -9,6 +9,10 @@ dotenv.config();
 const app = express();
 
 app.use(bodyParser.json());
+app.get("/", (req, res) => {
+  res.send("Notification Service is running Live Hit the API endpoints to get the results,best works in Postman.");
+});
+
 app.use('/users', userRoutes);
 
 mongoose.connect(process.env.MONGODB_URI)
