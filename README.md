@@ -30,6 +30,7 @@ cd Notification-Service
 
 ```bash
 npm install
+npm install express mongoose dotenv body-parser amqplib nodemailer twilio
 ```
 
 ### 3. Configure Environment
@@ -86,7 +87,7 @@ Ready to process notifications
 
 ---
 
-## 📬 API Endpoints [API Documentation](./API_DOCUMENTATION.md)
+## 📬 API Endpoints   [API Documentation Download](./API_DOCUMENTATION.md)
 
 ### ➕ Create User
 
