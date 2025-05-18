@@ -22,8 +22,8 @@ A scalable, environment-aware notification service supporting Email, SMS, and In
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/notification-service.git
-cd notification-service
+git clone https://github.com/NishantChaubey534/Notification-Service.git
+cd Notification-Service
 ```
 
 ### 2. Install Dependencies
@@ -66,7 +66,7 @@ Make sure your MongoDB and RabbitMQ instances are running. You can use Docker or
 ### 5. Start the Server
 
 ```bash
-npm run dev
+npm run dev or node server.js
 ```
 
 You should see:
@@ -86,7 +86,7 @@ Ready to process notifications
 
 ---
 
-## 📬 API Endpoints
+## 📬 API Endpoints [API Documentation](./API_DOCUMENTATION.md)
 
 ### ➕ Create User
 
@@ -157,10 +157,10 @@ Status: 201 Created
 ```
 GET /users/:id/notifications?limit=10&offset=0
 ```
+```
 Retrieve all notifications sent to a specific user.
 
-
-#### 📤 Successful Response:
+📤 Successful Response:
 **Status:** `200 OK`
   {
     "_id": "NOTIFICATION_ID",
@@ -173,8 +173,7 @@ Retrieve all notifications sent to a specific user.
     "createdAt": "...",
     "updatedAt": "..."
   }
-
----
+```
 
 ## 🧠 Assumptions
 
@@ -198,21 +197,36 @@ Retrieve all notifications sent to a specific user.
 ## 📁 Project Structure
 
 ```
-.
-├── app.js
-├── server.js
-├── controllers/
-├── models/
-├── routes/
-├── queues/
-├── services/
-└── .env
+Notification-Service/
+├── src/
+│ ├── controllers/
+│ │ └── notificationController.js
+│ ├── models/
+│ │ ├── Notification.js
+│ │ └── User.js
+│ ├── queues/
+│ │ ├── connection.js
+│ │ ├── notificationConsumer.js
+│ │ └── notificationProducer.js
+│ ├── routes/
+│ │ ├── notificationRoutes.js
+│ │ └── userRoutes.js
+│ ├── services/
+│ │ ├── emailService.js
+│ │ ├── smsService.js
+│ │ └── inAppService.js
+│ ├── app.js
+│ └── server.js
+├── .env
+├── README.md
+├── API_DOCUMENTATION.md
+├── package.json
+└── .gitignore
 ```
 
 ---
 
 ## 🔒 Security Notes
 
-- Never commit `.env` with sensitive data.
 - Use environment-specific `.env` files or secret managers in production.
 - Ensure HTTPS and validation middleware in real-world deployments.
