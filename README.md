@@ -78,6 +78,12 @@ Connected to RabbitMQ
 Ready to process notifications
 ```
 
+## 🌐 Live Demo
+
+[Click here to access the live Notification Service](https://notification-service-rt8c.onrender.com)
+
+> 🟢 You’ll see "Notification Service is running Live..." on the homepage. Use tools like Postman to test the API endpoints.
+
 ---
 
 ## 📬 API Endpoints
@@ -154,22 +160,19 @@ GET /users/:id/notifications?limit=10&offset=0
 Retrieve all notifications sent to a specific user.
 
 
-📤 Successful Response:
-Status: 200 OK
-[
-{
-"_id": "NOTIFICATION_ID",
-"userId": "USER_ID",
-"type": "email | sms | in-app",
-"title": "Title",
-"message": "Message body",
-"status": "pending | sent | failed",
-"retryCount": 0,
-"createdAt": "...",
-"updatedAt": "..."
-},
-...
-]
+#### 📤 Successful Response:
+**Status:** `200 OK`
+  {
+    "_id": "NOTIFICATION_ID",
+    "userId": "USER_ID",
+     "type": "email | sms | in-app",
+    "title": "Title",
+    "message": "Message body",
+    "status": "pending | sent | failed",
+    "retryCount": 0,
+    "createdAt": "...",
+    "updatedAt": "..."
+  }
 
 ---
 
